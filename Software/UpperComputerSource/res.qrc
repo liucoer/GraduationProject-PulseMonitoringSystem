@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icon/close.png</file>
+        <file>icon/down_list.png</file>
+        <file>icon/switch-OFF.png</file>
+        <file>icon/switch-ON.png</file>
+        <file>icon/login.png</file>
+    </qresource>
+</RCC>

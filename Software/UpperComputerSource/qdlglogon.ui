@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>qdlglogon</class>
+ <widget class="QDialog" name="qdlglogon">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>300</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_3">
+   <item>
+    <spacer name="verticalSpacer_4">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_4">
+     <property name="styleSheet">
+      <string notr="true">font: 24pt &quot;华文琥珀&quot;;
+border-radius:10px;</string>
+     </property>
+     <property name="text">
+      <string>欢迎注册!</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="styleSheet">
+          <string notr="true">border-radius:7px;</string>
+         </property>
+         <property name="text">
+          <string>用户名</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_2">
+         <property name="styleSheet">
+          <string notr="true">border-radius:7px;</string>
+         </property>
+         <property name="text">
+          <string>密码</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_3">
+         <property name="styleSheet">
+          <string notr="true">border-radius:7px;</string>
+         </property>
+         <property name="text">
+          <string>确认密码</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QLineEdit" name="editUser">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(247, 247, 247);
+border:1px groove gray;border-radius:
+7px;padding:2px 4px;
+font: 10pt &quot;Candara&quot;;</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="editPswd">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(247, 247, 247);
+border:1px groove gray;border-radius:
+7px;padding:2px 4px;
+font: 10pt &quot;Candara&quot;;</string>
+         </property>
+         <property name="echoMode">
+          <enum>QLineEdit::Password</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="editRePswd">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(247, 247, 247);
+border:1px groove gray;border-radius:
+7px;padding:2px 4px;
+font: 10pt &quot;Candara&quot;;</string>
+         </property>
+         <property name="echoMode">
+          <enum>QLineEdit::Password</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <widget class="QPushButton" name="btnRegist">
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+	font: 10pt &quot;微软雅黑&quot;;
+    color: #2f3640;
+    background-color: #f5f6fa;
+    border-color: #2f3640;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 2px;
+    padding: 5px;
+}
+
+/**鼠标停留在按钮上的样式**/
+QPushButton::hover{	
+    color: #FFFFFF;
+    background-color: #718093;
+    border-color: #2f3640;
+}
+
+/**鼠标按压下去的样式**/
+QPushButton::pressed,QPushButton::checked{
+    color: #FFFFFF;
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #273c75, stop:1 #487eb0);
+}</string>
+     </property>
+     <property name="text">
+      <string>注册</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="btnReturn">
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+	font: 10pt &quot;微软雅黑&quot;;
+    color: #2f3640;
+    background-color: #f5f6fa;
+    border-color: #2f3640;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 2px;
+    padding: 5px;
+}
+
+/**鼠标停留在按钮上的样式**/
+QPushButton::hover{	
+    color: #FFFFFF;
+    background-color: #718093;
+    border-color: #2f3640;
+}
+
+/**鼠标按压下去的样式**/
+QPushButton::pressed,QPushButton::checked{
+    color: #FFFFFF;
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #273c75, stop:1 #487eb0);
+}</string>
+     </property>
+     <property name="text">
+      <string>返回</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer_3">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>btnReturn</sender>
+   <signal>clicked()</signal>
+   <receiver>qdlglogon</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>164</x>
+     <y>294</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>164</x>
+     <y>191</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

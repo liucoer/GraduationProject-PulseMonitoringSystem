@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1120</width>
+    <height>630</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>脉搏监测上位机</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonIconOnly</enum>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <widget class="QSplitter" name="splitter">
+      <property name="mouseTracking">
+       <bool>false</bool>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QGroupBox" name="groupBox">
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="mouseTracking">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QGroupBox
+{
+	border: 3px solid gray;
+	border-radius:10px;
+	margin-top:4ex;
+	font-family:楷体;
+	font:bold 18px;
+ 
+} 
+QGroupBox::title
+{
+	subcontrol-origin:margin;
+	subcontrol-position:top center;
+	padding:1px;
+}
+QGroupBox::enabled{
+	border: 3px solid gray;
+}
+QGroupBox::!enabled {
+	border: 1px solid gray;
+}
+
+QPushButton{
+	font: 10pt &quot;微软雅黑&quot;;
+    color: #2f3640;
+    background-color: #f5f6fa;
+   border-color:rgb(77, 123, 255);/*边框颜色*/
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 2px;
+    padding: 5px;
+}
+QPushButton::hover{	
+    color: #FFFFFF;
+    background-color: #718093;
+    border-color: #2f3640;
+}
+
+QPushButton::pressed,QPushButton::checked{
+    color: #FFFFFF;
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #273c75, stop:1 #487eb0);
+}
+</string>
+       </property>
+       <property name="title">
+        <string>蓝牙设备</string>
+       </property>
+       <property name="flat">
+        <bool>false</bool>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QComboBox" name="comboBox">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>35</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="mouseTracking">
+           <bool>false</bool>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">/*QCombobox主体*/
+QComboBox {
+    border:2px solid #f3f3f3;/*设置线宽*/
+	background-color: rgb(237, 242, 255);/*背景颜色*/
+    border-radius: 10px;/*圆角*/
+    padding: 1px 2px 1px 2px;  /*针对于组合框中的文本内容*/
+	text-align:bottom;
+    /*min-height: 5em;*/
+
+	border-style:solid;/*边框为实线型*/
+	border-width:2px;/*边框宽度*/
+	border-color:rgb(77, 123, 255);/*边框颜色*/
+
+	padding-left: 10px;/*左侧边距*/
+}
+/*QCombobox右侧按钮*/
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;/*放于右方顶部*/
+    width: 30px;/*设置按钮范围宽度*/
+    border-left-width: 2px;
+    border-left-color: darkgray;
+    border-left-style: solid;
+
+    border-top-right-radius: 3px;/*设置边框圆角*/
+    border-bottom-right-radius: 3px;
+}
+/*QCombobox右侧按钮的箭头图标*/
+QComboBox::down-arrow {
+	border-image: url(:/icon/down_list.png);/*自定义图片填充*/
+	width: 10px;/*设置该图标的宽高*/
+	height: 10px;
+}
+
+
+/* 下拉后，整个下拉窗体样式 */
+QComboBox QAbstractItemView {
+    border: 2px solid #f3f3f3;/*边框宽度、线形、颜色*/
+	background-color: rgba(237, 242, 255, 1);/*背景颜色*/
+    border-radius: 15px;/*圆角*/
+    padding: 1px 2px 1px 2px;  /*针对于组合框中的文本内容*/
+    min-width: 9em;   /*# 组合框的最小宽度*/
+}
+
+/* 下拉后，整个下拉窗体每项的样式 */
+QComboBox QAbstractItemView::item {
+	border-radius: 15px;/*圆角*/
+    height: 30px;   /* 项的高度（设置pComboBox-&gt;setView(new QListView());后，该项才起作用） */
+	background-color: rgb(237, 242, 255);
+
+}
+
+/*以下部分不知为何不生效，有待调试*/
+/* 下拉后，整个下拉窗体越过每项的样式 */
+QComboBox QAbstractItemView::item:hover {
+    color: #FFFFF0;
+       /* 整个下拉窗体越过每项的背景色 */
+	background-color: rgb(98, 0, 255);
+}
+
+/* 下拉后，整个下拉窗体被选择的每项的样式 */
+QComboBox QAbstractItemView::item:selected {
+    color: #FFFFF0;
+	background-color: rgb(0, 85, 200);
+}
+</string>
+          </property>
+          <property name="editable">
+           <bool>false</bool>
+          </property>
+          <property name="frame">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnFind">
+          <property name="mouseTracking">
+           <bool>true</bool>
+          </property>
+          <property name="text">
+           <string>刷新</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnOpen">
+          <property name="mouseTracking">
+           <bool>true</bool>
+          </property>
+          <property name="text">
+           <string>连接设备</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnClose">
+          <property name="mouseTracking">
+           <bool>true</bool>
+          </property>
+          <property name="text">
+           <string>断开设备</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="layoutWidget">
+       <property name="mouseTracking">
+        <bool>false</bool>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_5">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QCheckBox" name="chkRe">
+            <property name="minimumSize">
+             <size>
+              <width>60</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="mouseTracking">
+             <bool>false</bool>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QCheckBox{
+border-radius:10px;
+}
+QCheckBox::indicator {
+	width: 50px;
+    height: 50px;
+	color: rgb(0, 0, 0);
+}
+QCheckBox::indicator:unchecked {
+image: url(://icon/switch-OFF.png);
+}
+QCheckBox::indicator:checked {
+image: url(://icon/switch-ON.png)
+}</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="checked">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="mouseTracking">
+             <bool>false</bool>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLCDNumber" name="lcdNumber">
+            <property name="minimumSize">
+             <size>
+              <width>120</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>210</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="mouseTracking">
+             <bool>false</bool>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(255, 0, 0);
+background-color: rgb(0, 0, 0);
+border-radius:15px;</string>
+            </property>
+            <property name="digitCount">
+             <number>3</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_3">
+            <property name="mouseTracking">
+             <bool>false</bool>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnClear">
+            <property name="minimumSize">
+             <size>
+              <width>80</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="mouseTracking">
+             <bool>true</bool>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+	font: 10pt &quot;微软雅黑&quot;;
+    color: #2f3640;
+    background-color: #f5f6fa;
+   border-color:rgb(77, 123, 255);/*边框颜色*/
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 2px;
+    padding: 5px;
+}
+QPushButton::hover{	
+    color: #FFFFFF;
+    background-color: #718093;
+    border-color: #2f3640;
+}
+
+QPushButton::pressed,QPushButton::checked{
+    color: #FFFFFF;
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #273c75, stop:1 #487eb0);
+}</string>
+            </property>
+            <property name="text">
+             <string>清空</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTabWidget" name="tabWidget">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>500</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="mouseTracking">
+           <bool>false</bool>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">/*设置TabWidget中tab_1的样式*/
+#tab.QWidget{
+	background-color: rgba(108, 117, 125, 65);
+}
+ 
+/*设置TabWidget中tab_2的样式*/
+#tab_2.QWidget{
+	background-color: rgba(108, 117, 125, 65);
+}
+/*设置TabWidget中tab_2的样式*/
+#tab_3.QWidget{
+	background-color: rgba(108, 117, 125, 65);
+}
+ 
+/*设置TabWidget中QTabBar的样式*/
+QTabBar::tab{
+    background-color: #0B0E11;
+	font-family:Consolas;    /*设置tab中的文本的字体*/
+	font-size:10pt;
+	color:#ced4da;    /*设置tab中的文本的颜色*/
+
+	border-top-left-radius: 5px;    /*设置tab的边框的圆角（左上圆角）*/
+	border-top-right-radius: 5px;    /*设置tab的边框的圆角（右上圆角）*/
+	min-width: 8px;
+	padding: 5px;
+}
+ 
+/*设置TabWidget中QTabBar的tab被选中时的样式*/
+QTabBar::tab:selected{
+    background-color: rgba(108, 117, 125, 65);
+	color: rgb(0, 0, 0);
+}
+ 
+/*设置TabWidget中鼠标悬浮在QTabBar的tab上，但未选中该Tab的样式*/
+QTabBar::tab:hover:!selected {
+    background-color: rgba(108, 117, 125, 45);
+}
+ 
+/*设置TabWidget的边框的样式*/
+QTabWidget::pane {
+    border: 1px solid rgba(108, 117, 125, 65);
+}
+ 
+</string>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <widget class="QWidget" name="tab_2">
+           <attribute name="title">
+            <string>原始脉搏波形</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_2">
+            <item>
+             <widget class="PWChartView" name="chartViewO">
+              <property name="mouseTracking">
+               <bool>false</bool>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::NoFrame</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Plain</enum>
+              </property>
+              <property name="renderHints">
+               <set>QPainter::Antialiasing</set>
+              </property>
+              <property name="dragMode">
+               <enum>QGraphicsView::ScrollHandDrag</enum>
+              </property>
+              <property name="viewportUpdateMode">
+               <enum>QGraphicsView::FullViewportUpdate</enum>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tab">
+           <attribute name="title">
+            <string>处理后脉搏波形</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_4">
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QGroupBox" name="gboxChartView">
+              <property name="mouseTracking">
+               <bool>false</bool>
+              </property>
+              <property name="title">
+               <string/>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_3">
+               <item>
+                <widget class="PWChartView" name="chartView3">
+                 <property name="mouseTracking">
+                  <bool>false</bool>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::NoFrame</enum>
+                 </property>
+                 <property name="renderHints">
+                  <set>QPainter::Antialiasing</set>
+                 </property>
+                 <property name="dragMode">
+                  <enum>QGraphicsView::ScrollHandDrag</enum>
+                 </property>
+                 <property name="viewportUpdateMode">
+                  <enum>QGraphicsView::FullViewportUpdate</enum>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tab_3">
+           <attribute name="title">
+            <string>脉搏数据</string>
+           </attribute>
+           <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <item>
+             <widget class="QTextEdit" name="dataEdit">
+              <property name="mouseTracking">
+               <bool>false</bool>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Sunken</enum>
+              </property>
+              <property name="autoFormatting">
+               <set>QTextEdit::AutoNone</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTextEdit" name="dataEdit_2">
+              <property name="mouseTracking">
+               <bool>false</bool>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Sunken</enum>
+              </property>
+              <property name="autoFormatting">
+               <set>QTextEdit::AutoNone</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PWChartView</class>
+   <extends>QGraphicsView</extends>
+   <header>pwchartview.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
