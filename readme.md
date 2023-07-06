@@ -19,13 +19,13 @@
 ### 2.3 3D实物
 ![](pictures/3D_R2V.png)
 # 软件设计
-## 1.STM32的源码[LowerComputerSource](Software\LowerComputerSource)
+## 1.STM32的源码[LowerComputerSource](Software\LowerComputerSource\readme.md)
 使用 C 语言以及 GNU Arm 嵌入式工具链，基于 1.9.0 版的 STM32F4 的 DSP 和标准外设库开发、编译
-## 2.STM32可直接烧录的文件[STM32BurnableFiles](Software\STM32BurnableFiles)
+## 2.STM32可直接烧录的文件[STM32BurnableFiles](Software\STM32BurnableFiles\readme.md)
 使用JLINK等其他烧录工具烧录其中一个文件即可
-## 3.上位机源码[UpperComputerSource](Software\UpperComputerSource)
+## 3.上位机源码[UpperComputerSource](Software\UpperComputerSource\readme.md)
 使用C++基于Qt6编写，界面使用Qt Designer设计
-## 4.上位机可执行程序[UpperExecutableProgram](Software\UpperExecutableProgram)
+## 4.上位机可执行程序[UpperExecutableProgram](Software\UpperExecutableProgram\readme.md)
 双击其中的exe文件即可运行
 ### 4.1 登陆界面
 ![](pictures/logon.png)
